@@ -1,0 +1,318 @@
+/* Hero Section */
+
+.hero {
+  width: 100%;
+  min-height: 650px;
+  background-color: #f5faff;
+  display: flex;
+  align-items: center;
+  padding: 60px 10%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Left Content */
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-label {
+  display: inline-block;
+  color: #1556ad;
+  background-color: #e6f0ff;
+  padding: 9px 16px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 25px;
+}
+
+.hero-content h1 {
+  font-size: 58px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: #142d4e;
+  margin-bottom: 25px;
+  letter-spacing: -2px;
+}
+
+.hero-content h1 span {
+  color: #1556ad;
+}
+
+.hero-content > p {
+  color: #66758a;
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 480px;
+  margin-bottom: 35px;
+}
+
+/* Buttons */
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 55px;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.primary-btn {
+  background-color: #1556ad;
+  color: #ffffff;
+}
+
+.primary-btn:hover {
+  background-color: #0d428b;
+  transform: translateY(-2px);
+}
+
+.secondary-btn {
+  color: #1556ad;
+  border: 1px solid #1556ad;
+  background-color: transparent;
+}
+
+.secondary-btn:hover {
+  background-color: #e6f0ff;
+}
+
+/* Statistics */
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.stat h3 {
+  font-size: 25px;
+  color: #142d4e;
+  margin-bottom: 5px;
+}
+
+.stat p {
+  font-size: 12px;
+  color: #7b8797;
+  white-space: nowrap;
+}
+
+.stat-divider {
+  height: 40px;
+  width: 1px;
+  background-color: #d5dfeb;
+}
+
+/* Right Image */
+
+.hero-image {
+  position: relative;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image-bg {
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  background-color: #dcecff;
+  border-radius: 50%;
+  overflow: hidden;
+  bottom: 0;
+  right: 20px;
+}
+
+/* IMPORTANT:
+   This class is only for the Hero image.
+   Do NOT use .doctor-image here.
+*/
+
+.hero-doctor-image {
+  position: absolute;
+  z-index: 1;
+  width: 430px;
+  height: 430px;
+  object-fit: contain;
+  object-position: bottom center;
+  bottom: 0;
+  right: 20px;
+}
+
+/* Floating Card */
+
+.hero-card {
+  position: absolute;
+  z-index: 2;
+  bottom: 65px;
+  left: 0;
+  background-color: #ffffff;
+  padding: 16px 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 35px rgba(20, 45, 78, 0.12);
+}
+
+.hero-card-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #1556ad;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.hero-card h4 {
+  font-size: 13px;
+  color: #142d4e;
+  margin-bottom: 5px;
+}
+
+.hero-card p {
+  font-size: 11px;
+  color: #7b8797;
+}
+
+/* Responsive Design */
+
+@media (max-width: 1000px) {
+  .hero {
+    padding: 50px 5%;
+  }
+
+  .hero-container {
+    gap: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 46px;
+  }
+
+  .hero-image-bg {
+    width: 350px;
+    height: 350px;
+  }
+
+  .hero-doctor-image {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 6%;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .hero-content > p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons,
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .hero-image {
+    height: 400px;
+  }
+
+  .hero-image-bg {
+    width: 320px;
+    height: 320px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .hero-doctor-image {
+    max-width: 400px;
+  }
+
+  .hero-card {
+    left: 5%;
+    bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 35px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-stats {
+    gap: 12px;
+  }
+
+  .stat h3 {
+    font-size: 20px;
+  }
+
+  .stat p {
+    font-size: 10px;
+  }
+
+  .hero-image {
+    height: 330px;
+  }
+
+  .hero-image-bg {
+    width: 270px;
+    height: 270px;
+  }
+
+  .hero-doctor-image {
+    max-width: 340px;
+  }
+
+  .hero-card {
+    padding: 10px;
+  }
+}

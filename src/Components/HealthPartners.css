@@ -1,0 +1,156 @@
+
+.health-partners {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  padding: 80px 40px 65px;
+  box-sizing: border-box;
+}
+
+.partners-container {
+  max-width: 1050px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.partners-container h2 {
+  margin: 0;
+  color: #171717;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.partners-description {
+  max-width: 650px;
+  margin: 30px auto 45px;
+  color: #777777;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Health partner logos */
+
+.partners-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px !important;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.partner-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.shopcare {
+  color: #c63e5b;
+}
+
+.shopcare-icon {
+  font-size: 30px;
+}
+
+.cliniza {
+  color: #d58b5d;
+  font-size: 29px;
+  font-weight: 400;
+}
+
+.fitbody {
+  color: #244b88;
+  font-size: 23px;
+}
+
+.fitbody-icon {
+  font-size: 27px;
+}
+
+.organica {
+  color: #438c83;
+  font-family: Georgia, serif;
+  font-size: 25px;
+}
+
+.organica-icon {
+  font-size: 31px;
+}
+
+.bmt {
+  color: #3885ae;
+  font-size: 29px;
+}
+
+/* Subtle bottom shadow */
+
+.health-partners::after {
+  content: '';
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 0;
+  height: 18px;
+  background: #ffffff;
+  box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.04);
+  pointer-events: none;
+}
+
+/* Tablet */
+
+@media (max-width: 850px) {
+  .health-partners {
+    padding: 65px 25px;
+  }
+
+  .partners-logos {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px !important;
+  }
+
+  .partner-logo {
+    font-size: 22px;
+  }
+
+  .cliniza,
+  .bmt {
+    font-size: 25px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+  .partners-container h2 {
+    font-size: 27px;
+  }
+
+  .partners-description {
+    margin: 20px auto 35px;
+    font-size: 14px;
+  }
+
+  .partners-logos {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px !important;
+  }
+
+  .partner-logo {
+    font-size: 20px;
+  }
+
+  .cliniza,
+  .bmt {
+    font-size: 22px;
+  }
+}
