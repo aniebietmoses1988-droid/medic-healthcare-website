@@ -8,8 +8,8 @@ import DoctorSection from "./Components/DoctorSection";
 import HealthPartners from "./Components/HealthPartners";
 import ScrollToSection from "./Components/ScrollToSection";
 
-import ContactPage from "./pages/ContactPage";
-import LoginPage from "./pages/LoginPage";
+import ContactPage from "./pages/Contactpage.jsx";
+import LoginPage from "./pages/Loginpage.jsx";
 
 function HomePage() {
   return (
