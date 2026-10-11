@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import "./LoginPage.css";
+import "./Loginpage.css";
 
 function LoginPage() {
   function handleSubmit(event) {
