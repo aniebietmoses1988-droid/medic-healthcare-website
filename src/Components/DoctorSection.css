@@ -1,6 +1,9 @@
+
+/* DOCTORS SECTION */
+
 .doctors-section {
   width: 100%;
-  padding: 80px 6%;
+  padding: 80px 6% 120px;
   background-color: #ffffff;
   box-sizing: border-box;
   position: relative;
@@ -59,7 +62,7 @@
 .doctors-grid {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;
   position: relative;
 }
@@ -74,7 +77,13 @@
   border: 1px solid #eeeeee;
   border-radius: 18px;
   box-sizing: border-box;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doctor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.09);
 }
 
 /* DOCTOR IMAGE */
@@ -92,6 +101,7 @@
   height: 100%;
   display: block;
   object-fit: cover;
+  object-position: center top;
 }
 
 /* CARD CONTENT */
@@ -126,7 +136,7 @@
 
 @media (max-width: 900px) {
   .doctors-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -137,15 +147,64 @@
     padding: 60px 5%;
   }
 
+  .doctors-header {
+    margin-bottom: 35px;
+  }
+
   .doctors-header h2 {
     font-size: 32px;
   }
 
   .doctors-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .doctor-image {
     height: 260px;
+  }
+
+  .doctor-content {
+    padding: 22px;
+  }
+}
+
+/* DOCTOR CARD HOVER EFFECT */
+
+.doctor-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.doctor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+}
+
+/* IMAGE HOVER EFFECT */
+
+.doctor-image img {
+  transition: transform 0.4s ease;
+}
+
+.doctor-card:hover .doctor-image img {
+  transform: scale(1.05);
+}
+
+/* ACCESSIBILITY: REDUCE MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .doctor-card,
+  .doctor-image img {
+    transition: none;
+  }
+
+  .doctor-card:hover {
+    transform: none;
+  }
+
+  .doctor-card:hover .doctor-image img {
+    transform: none;
   }
 }
