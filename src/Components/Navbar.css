@@ -1,15 +1,17 @@
 
+/* ========================================
+   NAVBAR
+======================================== */
 .navbar {
   width: 100%;
-  height: 82px;
-
+  min-height: 80px;
+  padding: 16px 6%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  padding: 0 7%;
-
-  background: #ffffff;
+  gap: 32px;
+  background-color: #ffffff;
+  box-sizing: border-box;
 
   /* Sticky navbar */
   position: sticky;
@@ -17,66 +19,47 @@
   z-index: 1000;
 }
 
-/* =========================
+/* ========================================
    LOGO
-========================= */
-
+======================================== */
 .navbar-logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-
+  flex-shrink: 0;
   text-decoration: none;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1;
 }
 
 .logo-text {
   color: #1556ad;
-  font-size: 25px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
 }
 
 .logo-plus {
-  width: 36px;
-  height: 36px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #1556ad;
-  color: #ffffff;
-
-  border-radius: 50%;
-
-  font-size: 26px;
-  font-weight: 400;
-  line-height: 1;
+  color: #06771e;
+  margin-left: 2px;
 }
 
-/* =========================
-   NAVIGATION LINKS
-========================= */
-
+/* ========================================
+   DESKTOP NAVIGATION
+======================================== */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 34px;
-
+  justify-content: center;
+  gap: 32px;
   margin: 0;
   padding: 0;
-
   list-style: none;
 }
 
 .nav-links a {
+  display: inline-block;
   color: #222222;
-
   text-decoration: none;
-
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
-
   transition: color 0.2s ease;
 }
 
@@ -84,118 +67,168 @@
   color: #1556ad;
 }
 
-/* =========================
-   RIGHT SIDE
-========================= */
-
+/* ========================================
+   LOGIN AND CONTACT
+======================================== */
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 22px;
+  justify-content: center;
+  gap: 20px;
+  flex-shrink: 0;
 }
-
-/* LOGIN BUTTON */
 
 .login-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  padding: 10px 22px;
-
+  padding: 11px 24px;
   background-color: #1556ad;
   color: #ffffff;
-
   border: 1px solid #1556ad;
   border-radius: 6px;
-
   text-decoration: none;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
-
-  white-space: nowrap;
-
-  transition: all 0.3s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .login-button:hover {
-  background-color: #0d3e80;
-  border-color: #0d3e80;
+  background-color: #10458e;
+  border-color: #10458e;
 }
 
-/* CONTACT LINK */
-
 .contact-link {
-  color: #222222;
-
+  color: #1556ad;
   text-decoration: none;
-
-  font-size: 14px;
-  font-weight: 500;
-
+  font-size: 15px;
+  font-weight: 600;
   transition: color 0.2s ease;
 }
 
 .contact-link:hover {
+  color: #10458e;
+}
+
+/* ========================================
+   HAMBURGER BUTTON
+   Hidden on desktop
+======================================== */
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  background: transparent;
+  border: none;
   color: #1556ad;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
 }
 
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 1050px) {
+/* ========================================
+   TABLET AND MOBILE
+======================================== */
+@media (max-width: 768px) {
   .navbar {
-    padding: 0 5%;
+    min-height: 72px;
+    padding: 16px 5%;
+    flex-wrap: wrap;
+    gap: 0;
   }
 
-  .nav-links {
-    gap: 20px;
+  .navbar-logo {
+    font-size: 27px;
   }
 
-  .nav-links a {
-    font-size: 13px;
-  }
-
-  .nav-actions {
-    gap: 16px;
-  }
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 800px) {
-  .navbar {
-    height: 72px;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .nav-actions {
+  .menu-toggle {
+    display: inline-flex;
     margin-left: auto;
-    gap: 16px;
   }
 
-  .login-button {
-    padding: 9px 18px;
-    font-size: 13px;
+  /* Hide navigation until the menu opens */
+  .navbar .nav-links,
+  .navbar .nav-actions {
+    display: none;
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  /* Open mobile navigation */
+  .navbar.mobile-menu-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    margin: 12px 0 0;
+    padding: 0;
+    border-top: 1px solid #eeeeee;
+  }
+
+  .navbar.mobile-menu-open .nav-links li {
+    width: 100%;
+  }
+
+  .navbar.mobile-menu-open .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 14px 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+
+  /* Mobile Login and Contact */
+  .navbar.mobile-menu-open .nav-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 14px;
+    padding: 12px 0 8px;
+    border-top: 1px solid #eeeeee;
+  }
+
+  .navbar.mobile-menu-open .login-button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .navbar.mobile-menu-open .contact-link {
+    display: block;
+    padding: 8px;
+    text-align: center;
   }
 }
 
-/* =========================
-   SMOOTH SCROLLING
-========================= */
+/* ========================================
+   SMALL MOBILE PHONES
+======================================== */
+@media (max-width: 360px) {
+  .navbar {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
 
-html {
-  scroll-behavior: smooth;
+  .navbar-logo {
+    font-size: 25px;
+  }
+
+  .menu-toggle {
+    font-size: 26px;
+  }
 }
 
-/* Prevent section headings from hiding behind the navbar */
-
-section[id] {
-  scroll-margin-top: 100px;
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+@media (prefers-reduced-motion: reduce) {
+  .nav-links a,
+  .login-button,
+  .contact-link {
+    transition: none;
+  }
 }
