@@ -1,5 +1,5 @@
 
-import "./ContactPage.css";
+import "./Contactpage.css";
 
 function ContactPage() {
   function handleSubmit(event) {
