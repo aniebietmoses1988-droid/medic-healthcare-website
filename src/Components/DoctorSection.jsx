@@ -3,21 +3,21 @@ import "./DoctorSection.css";
 function DoctorSection() {
   const doctors = [
     {
-      image: "/Images/doctor-1.jpg",
+      image: "/images/doctor-1.jpg",
       name: "Dr. John Doe",
       specialty: "Cardiologist",
       description:
         "Experienced cardiologist providing expert care for heart and cardiovascular conditions.",
     },
     {
-      image: "/Images/doctor-2.jpg",
+      image: "/images/doctor-2.jpg",
       name: "Dr. Sarah Smith",
       specialty: "General Physician",
       description:
         "Dedicated physician focused on providing quality healthcare and personalized treatment.",
     },
     {
-      image: "/Images/doctor-3.jpg",
+      image: "/images/doctor-3.jpg",
       name: "Dr. Michael Brown",
       specialty: "Neurologist",
       description:
