@@ -12,8 +12,8 @@ function Hero() {
           </span>
 
           <h1>
-            Every good thing starts with
-            <span> good health.</span>
+            Your Health Deserves
+            <span> Exceptional Care.</span>
           </h1>
 
           <p>

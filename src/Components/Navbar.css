@@ -94,7 +94,38 @@
   gap: 22px;
 }
 
-.login-link {
+/* LOGIN BUTTON */
+
+.login-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 22px;
+
+  background-color: #1556ad;
+  color: #ffffff;
+
+  border: 1px solid #1556ad;
+  border-radius: 6px;
+
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  transition: all 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #0d3e80;
+  border-color: #0d3e80;
+}
+
+/* CONTACT LINK */
+
+.contact-link {
   color: #222222;
 
   text-decoration: none;
@@ -105,27 +136,8 @@
   transition: color 0.2s ease;
 }
 
-.login-link:hover {
+.contact-link:hover {
   color: #1556ad;
-}
-
-.search-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 5px;
-
-  border: none;
-  background: transparent;
-
-  color: #1556ad;
-
-  cursor: pointer;
-}
-
-.search-button:hover {
-  color: #0d3e80;
 }
 
 /* =========================
@@ -144,6 +156,10 @@
   .nav-links a {
     font-size: 13px;
   }
+
+  .nav-actions {
+    gap: 16px;
+  }
 }
 
 /* =========================
@@ -161,6 +177,12 @@
 
   .nav-actions {
     margin-left: auto;
+    gap: 16px;
+  }
+
+  .login-button {
+    padding: 9px 18px;
+    font-size: 13px;
   }
 }
 
