@@ -1,12 +1,12 @@
 
 import { Routes, Route } from "react-router-dom";
 
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Services from "./components/Services";
-import DoctorSection from "./components/DoctorSection";
-import HealthPartners from "./components/HealthPartners";
-import ScrollToSection from "./components/ScrollToSection";
+import Navbar from "./Components/Navbar";
+import Hero from "./Components/Hero";
+import Services from "./Components/Services";
+import DoctorSection from "./Components/DoctorSection";
+import HealthPartners from "./Components/HealthPartners";
+import ScrollToSection from "./Components/ScrollToSection";
 
 import ContactPage from "./pages/ContactPage";
 import LoginPage from "./pages/LoginPage";
