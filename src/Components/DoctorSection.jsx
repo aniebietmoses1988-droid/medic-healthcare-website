@@ -1,4 +1,16 @@
+
+import { motion } from "motion/react";
 import "./DoctorSection.css";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const smoothTransition = {
+  duration: 0.6,
+  ease: "easeOut",
+};
 
 function DoctorSection() {
   const doctors = [
@@ -28,8 +40,15 @@ function DoctorSection() {
   return (
     <section className="doctors" id="doctors">
       <div className="doctors-container">
-
-        <div className="doctors-header">
+        {/* Animated Heading */}
+        <motion.div
+          className="doctors-header"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ ...smoothTransition, delay: 0.1 }}
+        >
           <p className="doctors-subtitle">OUR DOCTORS</p>
 
           <h2>
@@ -40,12 +59,35 @@ function DoctorSection() {
             Get quality healthcare from experienced professionals dedicated
             to your health and wellbeing.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="doctors-grid">
+        {/* Animated Doctor Cards */}
+        <motion.div
+          className="doctors-grid"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.2,
+                delayChildren: 0.1,
+              },
+            },
+          }}
+        >
           {doctors.map((doctor) => (
-            <div className="doctor-card" key={doctor.name}>
-
+            <motion.div
+              className="doctor-card"
+              key={doctor.name}
+              variants={fadeUp}
+              transition={smoothTransition}
+              whileHover={{
+                y: -6,
+                transition: { duration: 0.25, ease: "easeOut" },
+              }}
+            >
               <div className="doctor-image">
                 <img src={doctor.image} alt={doctor.name} />
               </div>
@@ -61,11 +103,9 @@ function DoctorSection() {
                   {doctor.description}
                 </p>
               </div>
-
-            </div>
+            </motion.div>
           ))}
-        </div>
-
+        </motion.div>
       </div>
     </section>
   );

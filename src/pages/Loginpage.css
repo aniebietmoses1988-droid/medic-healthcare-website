@@ -150,3 +150,9 @@
     padding: 28px 22px;
   }
 }
+
+.login-error {
+  color: #dc2626;
+  font-size: 14px;
+  margin: 12px 0;
+}

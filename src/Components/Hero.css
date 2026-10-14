@@ -157,8 +157,8 @@
 .doctor-image {
   position: absolute;
   z-index: 2;
-  width: 430px;
-  height: 430px;
+  width: 500px;
+  height: 500px;
   object-fit: contain;
   object-position: bottom center;
   bottom: 0;

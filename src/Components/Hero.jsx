@@ -1,5 +1,17 @@
+
 import React from "react";
+import { motion } from "motion/react";
 import "./Hero.css";
+
+const textAnimation = {
+  hidden: { opacity: 0, y: 25 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const smoothTransition = {
+  duration: 0.7,
+  ease: "easeOut",
+};
 
 function Hero() {
   return (
@@ -7,22 +19,45 @@ function Hero() {
       <div className="hero-container">
         {/* Left Content */}
         <div className="hero-content">
-          <span className="hero-label">
+          <motion.span
+            className="hero-label"
+            variants={textAnimation}
+            initial="hidden"
+            animate="visible"
+            transition={{ ...smoothTransition, delay: 0.1 }}
+          >
             YOUR HEALTH, OUR PRIORITY
-          </span>
+          </motion.span>
 
-          <h1>
+          <motion.h1
+            variants={textAnimation}
+            initial="hidden"
+            animate="visible"
+            transition={{ ...smoothTransition, delay: 0.2 }}
+          >
             Your Health Deserves
             <span> Exceptional Care.</span>
-          </h1>
+          </motion.h1>
 
-          <p>
+          <motion.p
+            variants={textAnimation}
+            initial="hidden"
+            animate="visible"
+            transition={{ ...smoothTransition, delay: 0.35 }}
+          >
             Your health deserves the best care. We provide
             professional medical services to help you live
             a healthier and happier life.
-          </p>
+          </motion.p>
 
-          <div className="hero-buttons">
+          {/* Buttons */}
+          <motion.div
+            className="hero-buttons"
+            variants={textAnimation}
+            initial="hidden"
+            animate="visible"
+            transition={{ ...smoothTransition, delay: 0.5 }}
+          >
             <a href="#" className="hero-btn primary-btn">
               Request Appointment
               <span>→</span>
@@ -32,48 +67,84 @@ function Hero() {
               Learn More
               <span>↗</span>
             </a>
-          </div>
+          </motion.div>
 
-          {/* Trust indicators */}
-          <div className="hero-stats">
-            <div className="stat">
-              <h3>10+</h3>
-              <p>Years of Experience</p>
-            </div>
+          {/* Trust Indicators */}
+          <motion.div
+            className="hero-stats"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.15,
+                  delayChildren: 0.55,
+                },
+              },
+            }}
+          >
+            {[
+              ["10+", "Years of Experience"],
+              ["5k+", "Happy Patients"],
+              ["20+", "Expert Doctors"],
+            ].map(([number, label], index) => (
+              <React.Fragment key={label}>
+                {index > 0 && (
+                  <div className="stat-divider"></div>
+                )}
 
-            <div className="stat-divider"></div>
-
-            <div className="stat">
-              <h3>5k+</h3>
-              <p>Happy Patients</p>
-            </div>
-
-            <div className="stat-divider"></div>
-
-            <div className="stat">
-              <h3>20+</h3>
-              <p>Expert Doctors</p>
-            </div>
-          </div>
+                <motion.div
+                  className="stat"
+                  variants={textAnimation}
+                  transition={smoothTransition}
+                >
+                  <h3>{number}</h3>
+                  <p>{label}</p>
+                </motion.div>
+              </React.Fragment>
+            ))}
+          </motion.div>
         </div>
 
         {/* Right Image */}
         <div className="hero-image">
-          <div className="hero-image-bg"></div>
+          <motion.div
+            className="hero-image-bg"
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          />
 
-          <img
+          <motion.img
             src="/doctor.png"
             alt="Doctor wearing a white coat"
             className="doctor-image"
+            initial={{ opacity: 0, x: 45 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 0.9,
+              delay: 0.2,
+              ease: "easeOut",
+            }}
           />
 
-          <div className="hero-card">
+          <motion.div
+            className="hero-card"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.7,
+              ease: "easeOut",
+            }}
+          >
             <div className="hero-card-icon">+</div>
             <div>
               <h4>Professional Care</h4>
               <p>Your health matters to us</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
